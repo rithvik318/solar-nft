@@ -1,0 +1,30 @@
+await ethers.provider.getBlockNumber()
+switched from college network, restarted everything 
+await ethers.provider.getBlockNumber()
+await ethers.provider.getNetwork()
+await ethers.provider.getBlockNumber()
+)
+ethers.form  await ethers.provider.getBalance(await signer.getAddress())
+await ethers.provider.getBlockNumber()
+await ethers.provider._detectNetwork()
+await ethers.provider.send("eth_chainId", [])
+ await ethers.provider.getNetwork()
+await ethers.provider.getBlockNumber()
+   await ethers.provider.getNetwork()
+await ethers.provider.getNetwork()
+node -e "require('dotenv').config(); console.log(process.env.SEPOLIA_RPC_URL)"
+await ethers.provider.getNetwork()
+await ethers.provider.getBalance(await signer.getAddress())
+await ethers.provider.getBalance(await signer.getAddress
+await signer.getBalance()
+await signer.getAddress()
+const [signer] = await ethers.getSigners()
+npx hardhat console --network sepolia
+await
+const [signer] = await ethers.getSigners()
+await s
+const [signer] = await ethers.getSigners()
+await signer.getBalance()
+await sawait signer.getBalance()
+const [signer] = await ethers.getSigners()
+.help
