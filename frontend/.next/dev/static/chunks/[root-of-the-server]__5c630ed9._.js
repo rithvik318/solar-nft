@@ -551,6 +551,12 @@ function Home() {
             }
             setStatus("Minting NFT on Sepolia…");
             const provider = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].BrowserProvider(window.ethereum);
+            const network = await provider.getNetwork();
+            console.log("NETWORK DEBUG", network); // add this line
+            if (network.chainId !== 11155111n) {
+                alert(`Wrong network: chainId=${network.chainId.toString()}. Please switch MetaMask to Sepolia (11155111) and reload the page.`);
+                return;
+            }
             const signer = await provider.getSigner();
             const contract = new __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$ethers$2f$lib$2e$esm$2f$ethers$2e$js__$5b$client$5d$__$28$ecmascript$29$__$3c$export__$2a$__as__ethers$3e$__["ethers"].Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
             const to = walletAddress || await signer.getAddress();
@@ -656,14 +662,14 @@ function Home() {
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 202,
+                                            lineNumber: 208,
                                             columnNumber: 15
                                         }, this),
                                         "On‑chain solar panel certificates (Sepolia)"
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 188,
+                                    lineNumber: 194,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
@@ -676,7 +682,7 @@ function Home() {
                                     children: "Mint a Solar Panel NFT"
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 212,
+                                    lineNumber: 218,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -688,13 +694,13 @@ function Home() {
                                     children: "Feed coordinates and capacity, fetch open irradiance data, pin the proof to IPFS, and mint a clean ERC‑721 testnet certificate for your panel."
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 222,
+                                    lineNumber: 228,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                            lineNumber: 187,
+                            lineNumber: 193,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -703,13 +709,13 @@ function Home() {
                             children: walletAddress ? `Wallet: ${walletAddress.slice(0, 6)}…${walletAddress.slice(-4)}` : "Connect MetaMask"
                         }, void 0, false, {
                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                            lineNumber: 235,
+                            lineNumber: 241,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                    lineNumber: 178,
+                    lineNumber: 184,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -731,7 +737,7 @@ function Home() {
                                     children: "Panel details"
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 253,
+                                    lineNumber: 259,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -749,7 +755,7 @@ function Home() {
                                                     children: "Panel ID"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 272,
+                                                    lineNumber: 278,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -760,13 +766,13 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 273,
+                                                    lineNumber: 279,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 271,
+                                            lineNumber: 277,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -776,7 +782,7 @@ function Home() {
                                                     children: "Model"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 282,
+                                                    lineNumber: 288,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -787,13 +793,13 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 283,
+                                                    lineNumber: 289,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 281,
+                                            lineNumber: 287,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -803,7 +809,7 @@ function Home() {
                                                     children: "Capacity (kW)"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 292,
+                                                    lineNumber: 298,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -815,13 +821,13 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 293,
+                                                    lineNumber: 299,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 291,
+                                            lineNumber: 297,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -831,7 +837,7 @@ function Home() {
                                                     children: "City"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 303,
+                                                    lineNumber: 309,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -842,13 +848,13 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 304,
+                                                    lineNumber: 310,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 302,
+                                            lineNumber: 308,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -858,7 +864,7 @@ function Home() {
                                                     children: "State"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 313,
+                                                    lineNumber: 319,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -869,13 +875,13 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 314,
+                                                    lineNumber: 320,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 312,
+                                            lineNumber: 318,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -885,7 +891,7 @@ function Home() {
                                                     children: "Country"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 323,
+                                                    lineNumber: 329,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -896,13 +902,13 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 324,
+                                                    lineNumber: 330,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 322,
+                                            lineNumber: 328,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -912,7 +918,7 @@ function Home() {
                                                     children: "Latitude"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 333,
+                                                    lineNumber: 339,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -924,13 +930,13 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 334,
+                                                    lineNumber: 340,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 332,
+                                            lineNumber: 338,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -940,7 +946,7 @@ function Home() {
                                                     children: "Longitude"
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 344,
+                                                    lineNumber: 350,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
@@ -952,19 +958,19 @@ function Home() {
                                                     style: inputStyle
                                                 }, void 0, false, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 345,
+                                                    lineNumber: 351,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 343,
+                                            lineNumber: 349,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 263,
+                                    lineNumber: 269,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -981,7 +987,7 @@ function Home() {
                                             children: "Generate & upload metadata"
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 364,
+                                            lineNumber: 370,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -991,13 +997,13 @@ function Home() {
                                             children: "Mint NFT on Sepolia"
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 367,
+                                            lineNumber: 373,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 356,
+                                    lineNumber: 362,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1009,7 +1015,7 @@ function Home() {
                                     children: status
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 376,
+                                    lineNumber: 382,
                                     columnNumber: 13
                                 }, this),
                                 tokenURI && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1025,19 +1031,19 @@ function Home() {
                                             children: tokenURI
                                         }, void 0, false, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 394,
+                                            lineNumber: 400,
                                             columnNumber: 27
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 386,
+                                    lineNumber: 392,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                            lineNumber: 252,
+                            lineNumber: 258,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
@@ -1051,7 +1057,7 @@ function Home() {
                                     children: "Live preview"
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 401,
+                                    lineNumber: 407,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1075,7 +1081,7 @@ function Home() {
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                        lineNumber: 425,
+                                        lineNumber: 431,
                                         columnNumber: 17
                                     }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                         style: {
@@ -1089,19 +1095,19 @@ function Home() {
                                                 children: "Generate & upload metadata"
                                             }, void 0, false, {
                                                 fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                lineNumber: 437,
+                                                lineNumber: 443,
                                                 columnNumber: 19
                                             }, this),
                                             " to see the card."
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                        lineNumber: 435,
+                                        lineNumber: 441,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 411,
+                                    lineNumber: 417,
                                     columnNumber: 13
                                 }, this),
                                 preview && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1129,13 +1135,13 @@ function Home() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 456,
+                                                    lineNumber: 462,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 454,
+                                            lineNumber: 460,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1152,42 +1158,42 @@ function Home() {
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                                    lineNumber: 462,
+                                                    lineNumber: 468,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                            lineNumber: 460,
+                                            lineNumber: 466,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                                    lineNumber: 443,
+                                    lineNumber: 449,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                            lineNumber: 400,
+                            lineNumber: 406,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-                    lineNumber: 243,
+                    lineNumber: 249,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-            lineNumber: 176,
+            lineNumber: 182,
             columnNumber: 7
         }, this)
     }, void 0, false, {
         fileName: "[project]/OneDrive/Desktop/chainfly/solar-nft/frontend/pages/index.js",
-        lineNumber: 175,
+        lineNumber: 181,
         columnNumber: 5
     }, this);
 }

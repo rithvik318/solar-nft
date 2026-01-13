@@ -87,13 +87,19 @@ export default function Home() {
 
       setStatus("Minting NFT on Sepolia…");
 
-      const provider = new ethers.BrowserProvider(window.ethereum);
-      const signer = await provider.getSigner();
-      const contract = new ethers.Contract(
-        CONTRACT_ADDRESS,
-        CONTRACT_ABI,
-        signer
-      );
+     const provider = new ethers.BrowserProvider(window.ethereum);
+     const network = await provider.getNetwork();
+     console.log("NETWORK DEBUG", network); // add this line
+
+    if (network.chainId !== 11155111n) { // Sepolia
+     alert(`Wrong network: chainId=${network.chainId.toString()}. Please switch MetaMask to Sepolia (11155111) and reload the page.`);
+     return;
+    }
+
+
+const signer = await provider.getSigner();
+const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
+
 
       const to = walletAddress || (await signer.getAddress());
       const tx = await contract.safeMint(to, tokenURI);
