@@ -129,5 +129,5 @@ app.post("/api/panel/mintable", async (req, res) => {
 });
 
 app.listen(PORT, () => {
-  console.log(`Solar NFT backend listening on http://localhost:${PORT}`);
+  console.log(`Solar NFT backend listening on port ${PORT}`);
 });
