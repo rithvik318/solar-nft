@@ -10,7 +10,12 @@ const app = express();
 const PORT = process.env.PORT || 4000;
 
 // Middleware
-app.use(cors());
+app.use(cors({
+  origin: "https://rithviksolarnft.vercel.app",
+  methods: ["GET", "POST", "OPTIONS"],
+  allowedHeaders: ["Content-Type"],
+}));
+app.options("*", cors());
 app.use(express.json());
 
 // Health check
@@ -87,6 +92,8 @@ app.post("/api/panel/mintable", async (req, res) => {
         error: "Missing required fields: capacity_kw, city, lat, lon",
       });
     }
+
+    
 
     // 1) Build metadata + SVG using NASA POWER + imageGen
     const panelData = await buildPanelMetadata({
