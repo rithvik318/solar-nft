@@ -11,7 +11,7 @@
   "static/chunks/node_modules_ethers_lib_esm_5b588b10._.js",
   "static/chunks/node_modules_@noble_curves_esm_02b0ec14._.js",
   "static/chunks/node_modules_2889539e._.js",
-  "static/chunks/[root-of-the-server]__5c630ed9._.js"
+  "static/chunks/[root-of-the-server]__254c04c2._.js"
 ],
     source: "entry"
 });

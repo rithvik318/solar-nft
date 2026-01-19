@@ -1,6 +1,7 @@
 // frontend/pages/index.js
 import { useState } from "react";
 import { ethers } from "ethers";
+import API_BASE from "../utils/api";
 
 const CONTRACT_ADDRESS = "0x6f4955D95F410FBca2D1e922E8BBB233Ee61d233";
 
@@ -53,7 +54,7 @@ export default function Home() {
       setTokenURI("");
       setPreview(null);
 
-      const res = await fetch("http://localhost:4000/api/panel/mintable", {
+      const res = await fetch(`${API_BASE}/api/panel/mintable`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
