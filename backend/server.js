@@ -7,6 +7,15 @@ const { buildPanelMetadata } = require("./panelService");
 const { uploadMetadataToPinata } = require("./ipfsUpload");
 
 const app = express();
+app.use((req, res, next) => {
+  if (req.method === "OPTIONS") {
+    res.header("Access-Control-Allow-Origin", "https://rithviksolarnft.vercel.app");
+    res.header("Access-Control-Allow-Methods", "GET,POST,OPTIONS");
+    res.header("Access-Control-Allow-Headers", "Content-Type");
+    return res.sendStatus(200);
+  }
+  next();
+});
 const PORT = process.env.PORT || 4000;
 
 // Middleware
