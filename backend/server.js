@@ -21,10 +21,9 @@ const PORT = process.env.PORT || 4000;
 // Middleware
 app.use(cors({
   origin: "https://rithviksolarnft.vercel.app",
-  methods: ["GET", "POST", "OPTIONS"],
+  methods: ["GET", "POST"],
   allowedHeaders: ["Content-Type"],
 }));
-app.options("*", cors());
 app.use(express.json());
 
 // Health check
