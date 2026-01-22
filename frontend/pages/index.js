@@ -54,7 +54,7 @@ export default function Home() {
       setTokenURI("");
       setPreview(null);
 
-      const res = await fetch(`${API_BASE}/api/panel/mintable`, {
+      const res = await fetch("/api/panel/mintable", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
