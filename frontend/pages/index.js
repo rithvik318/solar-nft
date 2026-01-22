@@ -1,7 +1,6 @@
 // frontend/pages/index.js
 import { useState } from "react";
 import { ethers } from "ethers";
-import API_BASE from "../utils/api";
 
 const CONTRACT_ADDRESS = "0x6f4955D95F410FBca2D1e922E8BBB233Ee61d233";
 
