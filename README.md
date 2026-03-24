@@ -1,25 +1,50 @@
 # Solar Panel NFT (Sepolia)
 
-Solar Panel NFT is a small end-to-end Web3 dApp that mints ERC-721 NFTs representing individual solar panels using open irradiance data and IPFS-hosted metadata.
+🔗 **Live Demo:** 
 
-Each NFT acts as a digital certificate and includes:
-- Panel location and capacity
-- Estimated annual energy generation (kWh/year)
-- Data source and proof hash
-- An auto-generated SVG “panel card” image
+1. https://rithviksolarnft.vercel.app
 
-The project demonstrates how open data, IPFS, and NFTs can be combined to create verifiable, non-speculative digital assets.
+2. https://rithviksolar-af27h2wvc-rithvikb318-5042s-projects.vercel.app/
+
+
+---
+
+**Solar Panel NFT** is a small end-to-end **Web3 dApp** that mints **ERC-721 NFTs** representing individual solar panels using **open irradiance data** and **IPFS-hosted metadata**.
+
+Each NFT acts as a **digital certificate** and includes:
+
+- **Panel location and capacity**
+- **Estimated annual energy generation (kWh/year)**
+- **Data source and proof hash**
+- **An auto-generated SVG “panel card” image**
+
+The project demonstrates how **open data, IPFS, and NFTs** can be combined to create **verifiable, non-speculative digital assets**.
 
 ---
 
 ## Tech Stack
 
-- Smart Contract: Solidity, OpenZeppelin ERC-721 (Sepolia)
-- Backend: Node.js + Express
-- Frontend: Next.js + React + ethers.js
-- Storage: IPFS via Pinata (JSON metadata + SVG)
+- **Smart Contract:** Solidity, OpenZeppelin ERC-721 (Sepolia)
+- **Frontend:** Next.js + React + ethers.js
+- **Backend Logic:** Node.js via Next.js API Routes
+- **Storage:** IPFS via Pinata (JSON metadata + SVG)
 
 ---
+
+## Architecture & Deployment
+
+The application is deployed entirely on **Vercel**.
+
+Backend functionality—such as **solar data processing**, **metadata generation**, and **IPFS uploads**—is implemented using **Next.js API routes** (`pages/api`).
+
+This unified setup allows the frontend and backend to run together on the same deployment, avoiding **CORS issues** and simplifying the deployment pipeline.
+
+The `backend/` directory contains reusable server-side logic that is imported by the API routes.  
+It is **not deployed as a standalone Express service** in the final architecture.
+
+---
+
+
 
 ## Quick Setup (Local)
 
@@ -94,5 +119,3 @@ npm run dev
 ## Notes
 
 * The ERC-721 contract is deployed on Sepolia via Remix + MetaMask.
-* Backend and frontend can be deployed independently for a live demo.
-* The contract can be redeployed with the same interface if required; only the address needs to be updated.
